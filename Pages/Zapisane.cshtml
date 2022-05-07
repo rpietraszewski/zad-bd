@@ -1,0 +1,25 @@
+﻿@page
+@model ZapisaneModel
+@{
+ViewData["Title"] = "Data in session";
+}
+<p>Dane w zapisane w sesji</p>
+
+@if (Model.People != null)
+{   
+@foreach (var item in Model.People)
+{
+    <ul>
+        <li>
+        @if(((item.Number % 4 == 0) && (item.Number % 100 != 0)) || (item.Number % 400 == 0))
+        {
+                <p>@item.Name ,@item.Number - rok przestepny</p>;
+            }
+            else
+            {
+                <p>@item.Name ,@item.Number - rok nie przestepny</p>;
+            }
+        </li>
+    </ul>
+}
+}

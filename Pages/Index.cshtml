@@ -1,0 +1,37 @@
+﻿@page
+@model IndexModel
+@{
+ViewData["Title"] = "zad3";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Formularz: </h1>
+    <form method="post">
+        <div id="column">        
+        <label asp-for="Check.Number"></label>
+        <input asp-for="Check.Number" /><br />
+        <span asp-validation-for="Check.Number" class="text-danger font-weight-bold"></span>
+          </div>
+          <div id="column">
+        <label asp-for="Check.Name"></label>
+        <input asp-for="Check.Name" /><br />
+        <span asp-validation-for="Check.Name" class="text-danger font-weight-bold"></span>
+        </div>
+        <div id="column">
+        <label asp-for="Check.LastName"></label>
+        <input asp-for="Check.LastName" /><br />
+        </div>
+        <div>
+
+        </div>
+        <button type="submit" class="btn btn-primary">Zatwierdź</button><br />
+    </form>
+</div>
+
+<div>
+@{
+    <div class="alert alert-@ViewData["MessageClass"]">
+        @ViewData["Message"]
+    </div>
+}
+    </div>
