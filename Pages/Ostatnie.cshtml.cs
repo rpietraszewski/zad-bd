@@ -18,7 +18,7 @@ namespace zad3.Pages
         public IList<Check> People2 { get; set; }
         public void OnGet()
         {
-            People2 = _context.Check.Take(20).OrderByDescending(x => x.Number).ToList();
+            People2 = _context.Check.Take(20).OrderByDescending(x => x.Now).ToList();
         }
     }
 }
